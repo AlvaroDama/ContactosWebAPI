@@ -11,6 +11,14 @@ namespace ContactosWebAPI
         {
             // Web API configuration and services
 
+            UnityConfig.RegisterComponents();
+            
+            var json = config.Formatters.JsonFormatter;
+            json.SerializerSettings.PreserveReferencesHandling =
+                Newtonsoft.Json.PreserveReferencesHandling.Objects;
+
+            config.Formatters.Remove(config.Formatters.XmlFormatter);
+
             // Web API routes
             config.MapHttpAttributeRoutes();
 
