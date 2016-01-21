@@ -10,11 +10,11 @@ namespace RepositorioAdapter.Adapter
     /// <typeparam name="TModel">Objeto de transferencia, es lo que mando al móvil</typeparam>
     public interface IAdapter <TEntity, TModel>
     {
-        TEntity FromViewModel(TModel model);
-        TModel FromModel(TEntity model);
+        TEntity FromModel(TModel model);
+        TModel FromEntity(TEntity entity);
 
-        ICollection<TEntity> FromViewModel(ICollection<TModel> model);
-        ICollection<TModel> FromModel(ICollection<TEntity> model);
+        ICollection<TEntity> FromModel(ICollection<TModel> models);
+        ICollection<TModel> FromEntity(ICollection<TEntity> entities);
 
     }
 }

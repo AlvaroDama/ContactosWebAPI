@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
 using System.Linq.Expressions;
 using RepositorioAdapter.Adapter;
 
@@ -11,44 +13,116 @@ namespace RepositorioAdapter.Repository
         where TEntity : class
         where TModel : class
     {
+
+        protected DbContext Context;
+        protected DbSet<TEntity> DbSet {get { return Context.Set<TEntity>(); } }
+
+        private TAdapter _adapter;
+        public TAdapter Adapter
+        {
+            get
+            {
+                if(_adapter == null)
+                    _adapter = new TAdapter();
+                return _adapter;
+            }
+        }
+        
         public TModel Add(TModel model)
         {
-            throw new NotImplementedException();
+            var guardado = Adapter.FromModel(model);
+            DbSet.Add(guardado);
+            try
+            {
+                Context.SaveChanges();
+                return Adapter.FromEntity(guardado);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return null;
+            }
         }
 
         public int Delete(params object[] keys)
         {
-            throw new NotImplementedException();
+            var eliminar = DbSet.Find(keys);
+            DbSet.Remove(eliminar);
+            try
+            {
+                return Context.SaveChanges();
+                
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return -1;
+            }
         }
 
         public int Delete(TModel model)
         {
-            throw new NotImplementedException();
+            var eliminar = Adapter.FromModel(model);
+            Context.Entry(eliminar).State = EntityState.Deleted;
+
+            try
+            {
+                return Context.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return -1;
+            }
         }
 
-        public int Delete(Expression<Func<TModel, bool>> consulta)
+        public int Delete(Expression<Func<TEntity, bool>> consulta)
         {
-            throw new NotImplementedException();
+            var eliminar = DbSet.Where(consulta);
+            DbSet.RemoveRange(eliminar);
+
+            try
+            {
+                return Context.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return -1;
+            }
         }
 
         public int Update(TModel model)
         {
-            throw new NotImplementedException();
+            var modificar = Adapter.FromModel(model);
+            Context.Entry(modificar).State = EntityState.Modified;
+
+            try
+            {
+                return Context.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return -1;
+            }
         }
 
         public TModel Get(params object[] keys)
         {
-            throw new NotImplementedException();
+            var data = DbSet.Find(keys);
+            return Adapter.FromEntity(data);
         }
 
-        public ICollection<TModel> Get(Expression<Func<TModel, bool>> consulta)
+        public ICollection<TModel> Get(Expression<Func<TEntity, bool>> consulta)
         {
-            throw new NotImplementedException();
+            var data = DbSet.Where(consulta);
+            return Adapter.FromEntity(data.ToList());
         }
 
         public ICollection<TModel> Get()
         {
-            throw new NotImplementedException();
+            return Adapter.FromEntity(DbSet.ToList());
         }
     }
 }

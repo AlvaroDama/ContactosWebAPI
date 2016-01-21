@@ -9,10 +9,10 @@ namespace RepositorioAdapter.Repository
         TModel Add(TModel model);
         int Delete(params object[] keys);
         int Delete(TModel model);
-        int Delete(Expression<Func<TModel, bool>> consulta);
+        int Delete(Expression<Func<TEntity, bool>> consulta);
         int Update(TModel model);
         TModel Get(params object[] keys);
-        ICollection<TModel> Get(Expression<Func<TModel, bool>> consulta);
+        ICollection<TModel> Get(Expression<Func<TEntity, bool>> consulta);
         ICollection<TModel> Get();
     }
 }

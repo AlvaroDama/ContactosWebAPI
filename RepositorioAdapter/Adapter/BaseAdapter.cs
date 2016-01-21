@@ -6,18 +6,18 @@ namespace RepositorioAdapter.Adapter
 {
     public abstract class BaseAdapter<TEntity, TModel> : IAdapter<TEntity, TModel>
     {
-        public ICollection<TModel> FromModel(ICollection<TEntity> model)
+        public ICollection<TModel> FromEntity(ICollection<TEntity> entities)
         {
-            return model.Select(FromModel).ToList();
+            return entities.Select(FromEntity).ToList();
         }
 
-        public abstract TModel FromModel(TEntity model);
+        public abstract TModel FromEntity(TEntity entity);
 
-        public ICollection<TEntity> FromViewModel(ICollection<TModel> model)
+        public ICollection<TEntity> FromModel(ICollection<TModel> models)
         {
-            return model.Select(FromViewModel).ToList();
+            return models.Select(FromModel).ToList();
         }
 
-        public abstract TEntity FromViewModel(TModel model);
+        public abstract TEntity FromModel(TModel model);
     }
 }
