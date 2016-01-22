@@ -22,6 +22,5 @@ namespace ContactosWebAPI.Models
         public bool Leido { get; set; }
         public System.DateTime Fecha { get; set; }
     
-        
     }
 }

@@ -23,7 +23,7 @@ namespace ContactosWebAPI.Repositorios
             var data = Get(o => o.Login == login &&
                                 o.Password == password);
 
-            return data.Any() ? data.First() : null;
+            return data.Any() ? data.FirstOrDefault() : null;
         }
 
         public bool IsUnico(string login)

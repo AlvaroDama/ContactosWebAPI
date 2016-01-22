@@ -121,8 +121,8 @@
           <Property Name="Contenido" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Leido" Type="Boolean" Nullable="false" />
           <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="3" />
-          <NavigationProperty Name="Usuario" Relationship="Self.FK_Mensaje_Destino" FromRole="Mensaje" ToRole="Usuario" />
-          <NavigationProperty Name="Usuario1" Relationship="Self.FK_Mensaje_Origen" FromRole="Mensaje" ToRole="Usuario" />
+          <NavigationProperty Name="Origen" Relationship="Self.FK_Mensaje_Destino" FromRole="Mensaje" ToRole="Usuario" />
+          <NavigationProperty Name="Destino" Relationship="Self.FK_Mensaje_Origen" FromRole="Mensaje" ToRole="Usuario" />
         </EntityType>
         <EntityType Name="Usuario">
           <Key>
@@ -134,10 +134,10 @@
           <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Apellidos" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Foto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Mensaje" Relationship="Self.FK_Mensaje_Destino" FromRole="Usuario" ToRole="Mensaje" />
-          <NavigationProperty Name="Mensaje1" Relationship="Self.FK_Mensaje_Origen" FromRole="Usuario" ToRole="Mensaje" />
+          <NavigationProperty Name="Enviados" Relationship="Self.FK_Mensaje_Destino" FromRole="Usuario" ToRole="Mensaje" />
+          <NavigationProperty Name="Recibidos" Relationship="Self.FK_Mensaje_Origen" FromRole="Usuario" ToRole="Mensaje" />
           <NavigationProperty Name="Usuario1" Relationship="Self.Contacto" FromRole="Usuario" ToRole="Usuario1" />
-          <NavigationProperty Name="Usuario2" Relationship="Self.Contacto" FromRole="Usuario1" ToRole="Usuario" />
+          <NavigationProperty Name="Amigos" Relationship="Self.Contacto" FromRole="Usuario1" ToRole="Usuario" />
         </EntityType>
         <Association Name="FK_Mensaje_Destino">
           <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />

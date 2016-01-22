@@ -30,9 +30,7 @@ namespace ContactosWebAPI.Models
         public string Apellidos { get; set; }
         public string Foto { get; set; }
     
-        
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Usuario> Usuario1 { get; set; }
-        
     }
 }
