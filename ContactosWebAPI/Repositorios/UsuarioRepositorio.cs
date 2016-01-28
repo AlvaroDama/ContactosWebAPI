@@ -1,6 +1,6 @@
 ﻿using System.Data.Entity;
 using System.Linq;
-using ContactoModel.Model;
+using ContactosModel.Model;
 using ContactosWebAPI.Adapters;
 using ContactosWebAPI.Models;
 using RepositorioAdapter.Repository;

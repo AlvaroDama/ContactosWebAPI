@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactosWebAPI", "Contacto
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepositorioAdapter", "RepositorioAdapter\RepositorioAdapter.csproj", "{F08895E5-04F6-4910-897C-725380562D57}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactosModel", "ContactoModel\ContactosModel.csproj", "{948D55D5-5BFB-4BF8-BACD-90B07D8368DC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactosModel", "ContactosModel\ContactosModel.csproj", "{948D55D5-5BFB-4BF8-BACD-90B07D8368DC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

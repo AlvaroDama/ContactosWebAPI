@@ -125,9 +125,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Adapters\ContactoAdapter.cs" />
+    <Compile Include="Adapters\MensajeAdapter.cs" />
     <Compile Include="Adapters\UsuarioAdapter.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\ContactosController.cs" />
+    <Compile Include="Controllers\MensajeController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -156,6 +160,8 @@
     </Compile>
     <Compile Include="Models\UsuarioPartial.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositorios\ContactoRepositorio.cs" />
+    <Compile Include="Repositorios\MensajeRepositorio.cs" />
     <Compile Include="Repositorios\UsuarioRepositorio.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -182,8 +188,8 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ContactoModel\ContactosModel.csproj">
-      <Project>{948d55d5-5bfb-4bf8-bacd-90b07d8368dc}</Project>
+    <ProjectReference Include="..\ContactosModel\ContactosModel.csproj">
+      <Project>{948D55D5-5BFB-4BF8-BACD-90B07D8368DC}</Project>
       <Name>ContactosModel</Name>
     </ProjectReference>
     <ProjectReference Include="..\RepositorioAdapter\RepositorioAdapter.csproj">

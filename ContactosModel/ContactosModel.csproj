@@ -8,8 +8,8 @@
     <ProjectGuid>{948D55D5-5BFB-4BF8-BACD-90B07D8368DC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ContactoModel</RootNamespace>
-    <AssemblyName>ContactoModel</AssemblyName>
+    <RootNamespace>ContactosModel</RootNamespace>
+    <AssemblyName>ContactosModel</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -38,6 +38,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\ContactoModel.cs" />
+    <Compile Include="Model\MensajeModel.cs" />
     <Compile Include="Model\UsuarioModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

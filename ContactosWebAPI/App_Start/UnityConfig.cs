@@ -19,6 +19,8 @@ namespace ContactosWebAPI
 
             container.RegisterType<DbContext, RedContactosEntities>();
             container.RegisterType<UsuarioRepositorio>();
+            container.RegisterType<ContactoRepositorio>();
+            container.RegisterType<MensajeRepositorio>();
             
             // e.g. container.RegisterType<ITestService, TestService>();
             
