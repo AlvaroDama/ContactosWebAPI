@@ -12,6 +12,5 @@ namespace ContactosModel.Model
         public bool Leido { get; set; }
         public string Estado => Leido ? "Leído" : "Sin leer";
         public string Contenido { get; set; }
-        
     }
 }

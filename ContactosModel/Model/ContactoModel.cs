@@ -4,6 +4,6 @@
     {
         public int IdOrigen { get; set; }
         public int IdDestino { get; set; }
-        public string NombreCompleto { get; set; } 
+        public string NombreCompleto { get; set; }
     }
 }

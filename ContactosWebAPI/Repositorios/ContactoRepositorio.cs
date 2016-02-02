@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Runtime.InteropServices;
 using ContactosModel.Model;
 using ContactosWebAPI.Adapters;
 using ContactosWebAPI.Models;
@@ -62,7 +61,7 @@ namespace ContactosWebAPI.Repositorios
                 Context.SaveChanges();
                 return model;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return null;
             }
@@ -77,7 +76,7 @@ namespace ContactosWebAPI.Repositorios
             {
                 return Context.SaveChanges();
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return -1;
             }
