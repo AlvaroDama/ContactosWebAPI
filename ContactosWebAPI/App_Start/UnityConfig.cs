@@ -3,7 +3,6 @@ using Microsoft.Practices.Unity;
 using System.Web.Http;
 using ContactosWebAPI.Models;
 using ContactosWebAPI.Repositorios;
-using RepositorioAdapter.Repository;
 using Unity.WebApi;
 
 namespace ContactosWebAPI

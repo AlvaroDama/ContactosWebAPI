@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Web.Http;
+﻿using System.Web.Http;
 using System.Web.Http.Description;
 using ContactosModel.Model;
-using ContactosWebAPI.Models;
 using ContactosWebAPI.Repositorios;
 using Microsoft.Practices.Unity;
 
@@ -29,7 +22,7 @@ namespace ContactosWebAPI.Controllers
             return Ok(res);
         }
 
-        [ResponseType(typeof(bool))]
+        [ResponseType(typeof (bool))]
         public IHttpActionResult GetUnico(string login)
         {
             return Ok(UserRepo.IsUnico(login));
@@ -42,7 +35,7 @@ namespace ContactosWebAPI.Controllers
 
             if (data == null)
                 return BadRequest();
-            
+
             return Ok(data);
         }
 
